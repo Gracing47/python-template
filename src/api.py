@@ -1,12 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pandas as pd
-import pickle
 import joblib
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-
 
 app = Flask(__name__)
 CORS(app)
@@ -45,7 +43,6 @@ def predict():
         return jsonify({"error": "Alle Parameter (zylinder, ps, gewicht, beschleunigung, baujahr) müssen angegeben werden"}), 400
 
     # Umwandlung der Parameter in ein DataFrame
-    import pandas as pd
     input_features = pd.DataFrame({
         'zylinder': [zylinder],
         'ps': [ps],
@@ -59,6 +56,11 @@ def predict():
 
     # Rückgabe der Vorhersage als JSON
     return jsonify({"predicted_mpg": float(mpg_prediction)})
+
+@app.after_request
+def add_csp_header(response):
+    response.headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval';"
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
