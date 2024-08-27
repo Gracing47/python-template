@@ -3,9 +3,13 @@ from flask_cors import CORS
 import pandas as pd
 import pickle
 import joblib
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://ml-auto-predictor-frontend.vercel.app"}})
+CORS(app)
 
 # Modell laden
 model = joblib.load('data/models/baummethoden_lr.pickle')
