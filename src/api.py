@@ -55,7 +55,7 @@ def predict():
     mpg_prediction = model.predict(input_features)[0]
 
     # Rückgabe der Vorhersage als JSON
-    return jsonify({"predicted_mpg": float(mpg_prediction)})
+    return jsonify({"result": float(mpg_prediction)})
 
 @app.after_request
 def add_csp_header(response):
