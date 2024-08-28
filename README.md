@@ -1,4 +1,7 @@
-git checkout main# Auto MPG Predictor
+Hier ist die aktualisierte README-Datei mit dem hinzugefügten Link zur App:
+
+````markdown
+# Auto MPG Predictor
 
 ## Part 1: Model Training and Testing
 
@@ -18,6 +21,8 @@ This project is a machine learning application that predicts the miles per gallo
    ```bash
    python src/train.py
    ```
+````
+
 3. To run the tests:
    ```bash
    python src/test_predict.py
@@ -75,12 +80,16 @@ This project is a continuation of the Auto MPG Predictor, where we have now exte
   - `GET /predict`: Returns a predicted MPG value based on the provided car features.
 
 - **Prediction Model**:
+
   - The prediction endpoint `/predict` uses a pre-trained machine learning model (`baummethoden_lr.pickle`) to predict the MPG based on the following parameters:
     - `zylinder`: Number of cylinders in the car's engine.
     - `ps`: Horsepower (engine power).
     - `gewicht`: Car's weight in pounds.
     - `beschleunigung`: Time taken to accelerate from 0 to 60 mph in seconds.
     - `baujahr`: Year of manufacture.
+
+- **Live App**:
+  - The application is also deployed live and can be accessed via the following link: [Auto MPG Predictor App](https://ml-auto-predict.vercel.app/).
 
 ### How to Run
 
