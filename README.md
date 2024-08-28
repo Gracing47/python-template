@@ -1,6 +1,3 @@
-Hier ist die aktualisierte README-Datei mit dem hinzugefügten Link zur App:
-
-````markdown
 # Auto MPG Predictor
 
 ## Part 1: Model Training and Testing
@@ -21,6 +18,7 @@ This project is a machine learning application that predicts the miles per gallo
    ```bash
    python src/train.py
    ```
+
 ````
 
 3. To run the tests:
@@ -119,3 +117,4 @@ This project is a continuation of the Auto MPG Predictor, where we have now exte
 [MIT License](https://opensource.org/licenses/MIT) - 2024
 
 Credits to Digethic for the project idea and guidance.
+````
